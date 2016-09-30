@@ -89,7 +89,7 @@ class PicosatOptions(SolverOptions):
                     raise ValueError("Invalid value for %s: %s" % \
                                      (str(k),str(v)))
             elif k == "output":
-                if v is not None and type(v) is not file:
+                if v is not None and not hasattr(v, "fileno"):
                     raise ValueError("Invalid value for %s: %s" % \
                                      (str(k),str(v)))
 
